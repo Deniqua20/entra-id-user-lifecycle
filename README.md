@@ -118,7 +118,7 @@ Azure Automation Runbook
 ### Key Results
 - Full offboarding from trigger to completion: **under 5 minutes**
 - Zero manual steps after trigger fired
-- No stored credentials — Managed Identity handles all authentication
+- No stored credentials  Managed Identity handles all authentication
 - Full audit trail in Entra ID audit logs
 - Scales to production by swapping HTTP trigger for Workday/SAP webhook
 
