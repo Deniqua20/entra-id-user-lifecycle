@@ -1,10 +1,10 @@
-# Project 2: Automated JML Identity Lifecycle — Microsoft Entra ID
+# Project 2: Automated JML Identity Lifecycle  Microsoft Entra ID
 
 ## Overview
 
-Built a fully automated Joiner/Mover/Leaver (JML) identity lifecycle pipeline using Microsoft Entra ID, Azure Logic Apps, Azure Automation, and Microsoft Graph API. Started with manual provisioning to understand the fundamentals, then extended it into a fully event-driven automated offboarding pipeline — replicating how enterprise IAM teams handle terminations at scale.
+Built a fully automated Joiner/Mover/Leaver (JML) identity lifecycle pipeline using Microsoft Entra ID, Azure Logic Apps, Azure Automation, and Microsoft Graph API. Started with manual provisioning to understand the fundamentals, then extended it into a fully event-driven automated offboarding pipeline replicating how enterprise IAM teams handle terminations at scale.
 
-**Why it matters:** Orphaned accounts are consistently listed as a top attack vector in breach reports. This lab demonstrates end-to-end identity lifecycle management — not just provisioning, but automated, auditable offboarding triggered by an event, with no manual steps required.
+**Why it matters:** Orphaned accounts are consistently listed as a top attack vector in breach reports. This lab demonstrates end-to-end identity lifecycle management  not just provisioning, but automated, auditable offboarding triggered by an event, with no manual steps required.
 
 ---
 
@@ -50,7 +50,7 @@ Built a fully automated Joiner/Mover/Leaver (JML) identity lifecycle pipeline us
 
 ## Part 2: Automated Pipeline (Event-Driven Offboarding)
 
-Extended the manual JML lab with a fully event-driven pipeline. When an HTTP POST is sent simulating an HR termination event, the entire offboarding process runs automatically — no manual steps required.
+Extended the manual JML lab with a fully event-driven pipeline. When an HTTP POST is sent simulating an HR termination event, the entire offboarding process runs automatically  no manual steps required.
 
 ### Pipeline Architecture
 
@@ -203,9 +203,9 @@ Write-Output "Offboarding complete for $UserPrincipalName"
 - Microsoft Graph API for identity management
 - Azure Logic Apps as orchestration layer
 - Azure Automation for PowerShell execution
-- Least privilege — Managed Identity granted minimum required permissions
+- Least privilege  Managed Identity granted minimum required permissions
 - Audit trail and compliance logging
-- Scalable architecture — HTTP trigger swappable for Workday/SAP webhook in production
+- Scalable architecture HTTP trigger swappable for Workday/SAP webhook in production
 
 ---
 
