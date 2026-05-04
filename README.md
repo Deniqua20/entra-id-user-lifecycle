@@ -22,18 +22,18 @@ Built a fully automated Joiner/Mover/Leaver (JML) identity lifecycle pipeline us
 
 ## Part 1: Manual JML Lifecycle (Foundation)
 
-### Joiner — New User Onboarding
+### Joiner New User Onboarding
 - Created new user accounts in Entra ID with appropriate attributes
 - Assigned users to applications and groups based on role
 - Configured MFA enrollment requirement on first login
 - Documented provisioning steps to simulate a repeatable onboarding workflow
 
-### Mover — Role Change
+### Mover  Role Change
 - Modified group memberships and application assignments to reflect a department transfer
 - Removed access to previous role's applications
 - Updated user attributes to reflect new department and manager
 
-### Leaver — Offboarding
+### Leaver Offboarding
 - Disabled the user account immediately upon simulated termination
 - Revoked active sessions and removed application assignments
 - After hold period, permanently deleted the account from the directory
@@ -77,18 +77,18 @@ Azure Automation Runbook
 
 ### What Was Built
 
-**Phase 1 — Test User**
+**Phase 1  Test User**
 - Created test user in Entra ID assigned to groups and apps for offboarding simulation
 
-**Phase 2 — Azure Automation Account**
+**Phase 2  Azure Automation Account**
 - Created Automation Account with System-Assigned Managed Identity
 - Managed Identity authenticates to Graph API — no stored credentials
 
-**Phase 3 — Graph API Permissions**
+**Phase 3  Graph API Permissions**
 - Granted Managed Identity: User.ReadWrite.All, GroupMember.ReadWrite.All, Directory.ReadWrite.All
 - Configured via PowerShell using Cloud Shell
 
-**Phase 4 — PowerShell Runbook**
+**Phase 4  PowerShell Runbook**
 - Runbook: `Invoke-JMLOffboard`
 - Accepts UserPrincipalName as parameter
 - Authenticates via Managed Identity
@@ -99,14 +99,14 @@ Azure Automation Runbook
   - Strip all license assignments
 - Logs each step to output
 
-**Phase 5 — Logic App Trigger**
+**Phase 5  Logic App Trigger**
 - Logic App: `jml-trigger` (Consumption tier)
 - Trigger: When HTTP request is received
 - Accepts JSON payload: `{ "userPrincipalName": "user@tenant.onmicrosoft.com", "action": "terminate" }`
 - Fires Azure Automation runbook automatically
 - Sends email notification on completion
 
-**Phase 6 — Testing**
+**Phase 6  Testing**
 - Fired trigger via HTTP POST
 - Verified: Logic App runs history showed green checkmarks
 - Verified: Runbook output showed each step completed
@@ -185,18 +185,10 @@ Write-Output "Offboarding complete for $UserPrincipalName"
 
 ---
 
-## Screenshots
-## Screenshots
-
-![Job Output](screenshots/last_auto.png)
-
-![Logic App Trigger](screenshots/automated12.png)
-
-![PowerShell Runbook](screenshots/automation8.png)
-
-![Graph API Permissions](screenshots/automation5.png)
----
-
+![Runbook Output](last%20auto.png)
+![Logic App Trigger](automated12.png)
+![PowerShell Script](automation%208.png)
+![Graph API Permissions](automation5.png)
 ## Key Concepts Demonstrated
 - Event-driven IAM automation
 - Managed Identity authentication (no stored credentials)
